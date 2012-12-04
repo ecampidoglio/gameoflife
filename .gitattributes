@@ -1,0 +1,10 @@
+*.cs          diff=csharp
+*.sln         merge=union
+*.csproj      merge=union
+*.sqlproj     merge=union
+*.dbproj      merge=union
+*.ps1         text
+*.psd1        text
+*.psm1        text
+*.schemaview  merge=union
+*.DotSettings text eol=lf merge=union
