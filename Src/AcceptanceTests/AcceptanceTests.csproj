@@ -80,7 +80,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Hooks\RegisterAutoData.cs" />
+    <Compile Include="Hooks\RegisterWebClient.cs" />
+    <Compile Include="Hooks\WebClient.cs" />
+    <Compile Include="Hooks\WebServer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Steps\WebClient.cs" />
+    <Compile Include="Scenarios\Rules.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Rules.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Steps\Rules.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Scenarios\" />
