@@ -26,7 +26,7 @@
         {
             return cells.Select(cell =>
             {
-                cell.Alive = false;
+                cell.Kill();
                 return cell;
             });
         }

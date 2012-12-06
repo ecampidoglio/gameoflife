@@ -72,6 +72,7 @@
     <Compile Include="Foundation\WithSubjectAndFakeEngine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Web\Controllers\GenerationControllerTests\When_calculating_the_next_generation_with_under_population.cs" />
+    <Compile Include="Web\Models\CellTests\When_killing_a_live_cell.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

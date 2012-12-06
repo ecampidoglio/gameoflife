@@ -8,8 +8,13 @@
             this.Neighbours = neighbours;
         }
 
-        public bool Alive { get; set; }
+        public bool Alive { get; private set; }
 
         public byte Neighbours { get; private set; }
+
+        public void Kill()
+        {
+            Alive = false;
+        }
     }
 }
