@@ -4,6 +4,6 @@
     I want to obtain the next generation of cells
 
 Scenario: Death by under-population
-	Given a live cell has fewer than 2 live neighbours
+    Given a live cell has fewer than 2 live neighbours
     When I ask for the next generation of cells
     Then the cell should be dead
