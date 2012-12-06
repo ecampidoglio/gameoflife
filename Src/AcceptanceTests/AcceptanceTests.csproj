@@ -93,7 +93,6 @@
     <Compile Include="Steps\Rules.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Scenarios\" />
     <ProjectReference Include="..\Web\Web.csproj">
       <Project>{5723acc3-2b8b-49e7-91fb-e042acc61376}</Project>
       <Name>Web</Name>

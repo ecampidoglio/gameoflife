@@ -23,20 +23,21 @@
         [Given]
         public void Given_a_live_cell_has_fewer_than_COUNT_live_neighbours(byte count)
         {
-            seed = new Cell(alive: true, neighbours: count);
+            seed = new Cell(alive: true, neighbours: --count);
         }
 
         [When]
         public void When_I_ask_for_the_next_generation_of_cells()
         {
-            response = client.PostAsJson("generation", seed);
+            var request = new[] { seed };
+            response = client.PostAsJson("api/generation", request);
         }
 
         [Then]
         public void Then_the_cell_should_be_dead()
         {
             var generation = ParseGenerationFromResponse();
-            generation.Single().Alive.ShouldBeTrue();
+            generation.Single().Alive.ShouldBeFalse();
         }
 
         private IEnumerable<Cell> ParseGenerationFromResponse()
