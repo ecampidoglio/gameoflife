@@ -68,6 +68,8 @@
     <Compile Include="Foundation\DefaultCustomization.cs" />
     <Compile Include="Foundation\WithAutoData.cs" />
     <Compile Include="Foundation\WithAutoDataFor.cs" />
+    <Compile Include="Foundation\WithSubject.cs" />
+    <Compile Include="Foundation\WithSubjectAndFakeEngine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
