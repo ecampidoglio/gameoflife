@@ -2,14 +2,14 @@
 {
     public class Cell
     {
-        private byte neighbours;
-
         public Cell(bool alive = false, byte neighbours = 0)
         {
             this.Alive = alive;
-            this.neighbours = neighbours;
+            this.Neighbours = neighbours;
         }
 
-        public bool Alive { get; private set; }
+        public bool Alive { get; set; }
+
+        public byte Neighbours { get; private set; }
     }
 }
