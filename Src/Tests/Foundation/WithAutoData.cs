@@ -18,12 +18,12 @@ namespace Thoughtology.GameOfLife.Tests.Foundation
 
         protected static T AnAnonymous<T>()
         {
-            return fixture.CreateAnonymous<T>();
+            return fixture.Create<T>();
         }
 
         protected static T AnAnonymousWith<T>(params Action<T>[] propertySetters)
         {
-            var value = fixture.CreateAnonymous<T>();
+            var value = fixture.Create<T>();
 
             foreach (var setter in propertySetters)
             {
@@ -44,7 +44,7 @@ namespace Thoughtology.GameOfLife.Tests.Foundation
                 builder = builder.With(p);
             }
 
-            return builder.CreateAnonymous();
+            return builder.Create();
         }
 
         protected static IEnumerable<T> ManyAnonymous<T>()

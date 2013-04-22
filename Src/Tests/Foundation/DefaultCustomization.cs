@@ -10,8 +10,6 @@ namespace Thoughtology.GameOfLife.Tests.Foundation
         {
             get
             {
-                yield return new MultipleCustomization();
-                yield return new StableFiniteSequenceCustomization();
                 yield return new ControllerCustomization();
             }
         }
