@@ -2,7 +2,7 @@
 {
     using Machine.Fakes.Adapters.Moq;
 
-    public abstract class WithSubject<TSubject> : WithSubjectAndFakeEngine<TSubject, MoqFakeEngine>
+    public abstract class WithSubject<TSubject> : WithSubjectAndFakes<TSubject, MoqFakeEngine>
         where TSubject : class
     {
     }

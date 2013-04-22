@@ -7,13 +7,13 @@
     using Machine.Specifications;
     using Machine.Specifications.Factories;
 
-    public abstract class WithSubjectAndFakeEngine<TSubject, TFakeEngine> : WithAutoDataFor<DefaultCustomization>
+    public abstract class WithSubjectAndFakes<TSubject, TFakeEngine> : WithAutoDataFor<DefaultCustomization>
         where TSubject : class
         where TFakeEngine : IFakeEngine, new()
     {
         private static SpecificationController<TSubject, TFakeEngine> specificationController;
 
-        protected WithSubjectAndFakeEngine()
+        protected WithSubjectAndFakes()
         {
             specificationController = new SpecificationController<TSubject, TFakeEngine>();
             ContextFactory.ChangeAllowedNumberOfBecauseBlocksTo(2);
