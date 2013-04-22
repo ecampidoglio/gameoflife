@@ -24,11 +24,11 @@
 
         private static IEnumerable<Cell> Kill(IEnumerable<Cell> cells)
         {
-            return cells.Select(cell =>
+            foreach (var cell in cells)
             {
                 cell.Kill();
-                return cell;
-            });
+                yield return cell;
+            }
         }
     }
 }
