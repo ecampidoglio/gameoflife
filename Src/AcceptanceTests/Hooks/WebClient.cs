@@ -13,20 +13,39 @@ namespace Thoughtology.GameOfLife.AcceptanceTests.Hooks
             AddAcceptJsonHeader();
         }
 
-        public HttpResponseMessage Get(string uri)
+        public HttpResponseMessage Get(string uri, params object[] uriValues)
         {
+            uri = ExpandVariablesInUri(uri, uriValues);
             return client.GetAsync(uri).Result;
         }
 
-        public HttpResponseMessage PostAsJson(string uri, object data)
+        public HttpResponseMessage PutAsJson(string uri, object data, params object[] uriValues)
         {
+            uri = ExpandVariablesInUri(uri, uriValues);
+            return client.PutAsJsonAsync(uri, data).Result;
+        }
+
+        public HttpResponseMessage PostAsJson(string uri, object data, params object[] uriValues)
+        {
+            uri = ExpandVariablesInUri(uri, uriValues);
             return client.PostAsJsonAsync(uri, data).Result;
+        }
+
+        public HttpResponseMessage Delete(string uri, params object[] uriValues)
+        {
+            uri = ExpandVariablesInUri(uri, uriValues);
+            return client.DeleteAsync(uri).Result;
         }
 
         private void AddAcceptJsonHeader()
         {
             client.DefaultRequestHeaders.Accept.Add(
                 new MediaTypeWithQualityHeaderValue("application/json"));
+        }
+
+        private string ExpandVariablesInUri(string uri, object[] arguments)
+        {
+            return string.Format(uri, arguments);
         }
     }
 }
