@@ -1,0 +1,51 @@
+﻿@charset "UTF-8";
+
+#layout {
+    width: 100%;
+    text-align: center;
+}
+
+#container {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#grid {
+    table-layout: fixed;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+#grid td {
+    width: 80px;
+    height: 80px;
+    border: 8px solid #c0c0c0;
+}
+
+#grid .alive {
+    background-color: #000;
+}
+
+#grid .dead {
+    background-color: #fff;
+}
+
+#nav {
+    font-family: Segoe UI, Verdana;
+    font-size: 15pt;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#nextGeneration {
+    color: #fff;
+    background-color: #808080;
+    padding: 6px 12px 6px 12px;
+    text-decoration: none;
+}
+
+#nav a:hover {
+    background-color: #ff8f40;
+}
