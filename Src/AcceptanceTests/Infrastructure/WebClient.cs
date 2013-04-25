@@ -1,4 +1,4 @@
-namespace Thoughtology.GameOfLife.AcceptanceTests.Hooks
+namespace Thoughtology.GameOfLife.AcceptanceTests.Infrastructure
 {
     using System.Net.Http;
     using System.Net.Http.Headers;

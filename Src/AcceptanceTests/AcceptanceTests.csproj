@@ -79,9 +79,11 @@
     <Compile Include="Foundation\Assertions.cs" />
     <Compile Include="Foundation\HttpExtensions.cs" />
     <Compile Include="Hooks\RegisterAutoData.cs" />
-    <Compile Include="Hooks\RegisterWebClient.cs" />
-    <Compile Include="Hooks\WebClient.cs" />
-    <Compile Include="Hooks\WebServer.cs" />
+    <Compile Include="Hooks\RegisterHttpClients.cs" />
+    <Compile Include="Infrastructure\WebBrowser.cs" />
+    <Compile Include="Infrastructure\WebClient.cs" />
+    <Compile Include="Infrastructure\WebElementExtensions.cs" />
+    <Compile Include="Infrastructure\WebServer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scenarios\Rules.feature.cs">
       <AutoGen>True</AutoGen>

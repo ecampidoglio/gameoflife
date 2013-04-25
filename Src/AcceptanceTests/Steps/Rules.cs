@@ -5,6 +5,7 @@
     using System.Net.Http;
     using Foundation;
     using Hooks;
+    using Infrastructure;
     using NUnit.Framework;
     using TechTalk.SpecFlow;
 

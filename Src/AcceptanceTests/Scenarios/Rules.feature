@@ -1,4 +1,5 @@
-﻿Feature: Rules
+﻿@RequireWebClient
+Feature: Rules
     In order to display the current state of the universe 
     As a Game of Life grid
     I want to obtain the next generation of cells

@@ -20,6 +20,7 @@ namespace Thoughtology.GameOfLife.AcceptanceTests.Scenarios
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("Rules")]
+    [NUnit.Framework.CategoryAttribute("RequireWebClient")]
     public partial class RulesFeature
     {
         
@@ -33,7 +34,8 @@ namespace Thoughtology.GameOfLife.AcceptanceTests.Scenarios
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Rules", "  In order to display the current state of the universe \r\n  As a Game of Life gri" +
-                    "d\r\n  I want to obtain the next generation of cells", ProgrammingLanguage.CSharp, ((string[])(null)));
+                    "d\r\n  I want to obtain the next generation of cells", ProgrammingLanguage.CSharp, new string[] {
+                        "RequireWebClient"});
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -70,17 +72,17 @@ namespace Thoughtology.GameOfLife.AcceptanceTests.Scenarios
         public virtual void DeathByUnder_Population()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Death by under-population", ((string[])(null)));
-#line 6
-this.ScenarioSetup(scenarioInfo);
 #line 7
-    testRunner.Given("a live cell has fewer than 2 live neighbours", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 8
-    testRunner.When("I ask for the next generation of cells", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.Given("a live cell has fewer than 2 live neighbours", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 9
-    testRunner.Then("I should get back a new generation", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+    testRunner.When("I ask for the next generation of cells", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 10
-    testRunner.And("it should have the same number of cells", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.Then("I should get back a new generation", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 11
+    testRunner.And("it should have the same number of cells", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 12
     testRunner.And("the cell should be dead", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
