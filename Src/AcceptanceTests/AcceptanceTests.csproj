@@ -84,12 +84,19 @@
     <Compile Include="Infrastructure\WebClient.cs" />
     <Compile Include="Infrastructure\WebElementExtensions.cs" />
     <Compile Include="Infrastructure\WebServer.cs" />
+    <Compile Include="Pages\UniversePage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scenarios\Game.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Game.feature</DependentUpon>
+    </Compile>
     <Compile Include="Scenarios\Rules.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Rules.feature</DependentUpon>
     </Compile>
+    <Compile Include="Steps\Game.cs" />
     <Compile Include="Steps\Rules.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -102,6 +109,10 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="Scenarios\Game.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>Game.feature.cs</LastGenOutput>
+    </None>
     <None Include="Scenarios\Rules.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Rules.feature.cs</LastGenOutput>
