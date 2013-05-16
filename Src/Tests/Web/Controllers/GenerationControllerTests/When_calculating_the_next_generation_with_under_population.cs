@@ -16,7 +16,7 @@ namespace Thoughtology.GameOfLife.Tests.Web.Controllers.GenerationControllerTest
         Establish context = () =>
         {
             solitaryCell = new Cell(alive: true, neighbours: 1);
-            seed = ManyAnonymousIncluding(solitaryCell);
+            seed = ManyIncluding(solitaryCell);
         };
 
         Because of = () =>

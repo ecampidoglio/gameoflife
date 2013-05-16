@@ -16,67 +16,52 @@ namespace Thoughtology.GameOfLife.Tests.Foundation
             fixture = new Fixture();
         };
 
-        protected static T AnAnonymous<T>()
-        {
-            return fixture.Create<T>();
-        }
-
-        protected static T AnAnonymousWith<T>(params Action<T>[] propertySetters)
+        protected static T A<T>(params Action<T>[] with)
         {
             var value = fixture.Create<T>();
 
-            foreach (var setter in propertySetters)
+            foreach (var propertySetter in with)
             {
-                setter(value);
+                propertySetter(value);
             }
 
             return value;
         }
 
-        protected static T AnAnonymousWithOnly<T>(params Expression<Func<T, object>>[] properties)
+        protected static T A<T>(params Expression<Func<T, object>>[] withOnly)
         {
             var builder = fixture
                 .Build<T>()
                 .OmitAutoProperties();
 
-            foreach (var p in properties)
+            foreach (var property in withOnly)
             {
-                builder = builder.With(p);
+                builder = builder.With(property);
             }
 
             return builder.Create();
         }
 
-        protected static IEnumerable<T> ManyAnonymous<T>()
+        protected static IEnumerable<T> Many<T>(int count = 3, params Action<T>[] with)
         {
-            return fixture.CreateMany<T>();
-        }
-
-        protected static IEnumerable<T> ManyAnonymous<T>(int count)
-        {
-            return fixture.CreateMany<T>(count);
-        }
-
-        protected static IEnumerable<T> ManyAnonymousWith<T>(params Action<T>[] propertySetters)
-        {
-            var values = fixture.CreateMany<T>();
+            var values = fixture.CreateMany<T>(count);
 
             foreach (var value in values)
             {
-                Array.ForEach(propertySetters, setter => setter(value));
+                Array.ForEach(with, setter => setter(value));
             }
 
             return values;
         }
 
-        protected static IEnumerable<T> ManyAnonymousIncluding<T>(params T[] elements)
+        protected static IEnumerable<T> ManyIncluding<T>(params T[] elements)
         {
-            return ManyAnonymousIncluding((IEnumerable<T>)elements);
+            return ManyIncluding((IEnumerable<T>)elements);
         }
 
-        protected static IEnumerable<T> ManyAnonymousIncluding<T>(IEnumerable<T> elements)
+        protected static IEnumerable<T> ManyIncluding<T>(IEnumerable<T> elements)
         {
-            return ManyAnonymous<T>().Union(elements);
+            return Many<T>().Union(elements);
         }
     }
 }
