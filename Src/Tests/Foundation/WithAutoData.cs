@@ -71,7 +71,7 @@ namespace Thoughtology.GameOfLife.Tests.Foundation
 
         protected static IEnumerable<T> ManyAnonymousIncluding<T>(params T[] elements)
         {
-            return ManyAnonymous<T>().Union(elements);
+            return ManyAnonymousIncluding((IEnumerable<T>)elements);
         }
 
         protected static IEnumerable<T> ManyAnonymousIncluding<T>(IEnumerable<T> elements)
