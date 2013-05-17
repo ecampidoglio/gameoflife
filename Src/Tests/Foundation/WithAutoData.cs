@@ -16,39 +16,52 @@ namespace Thoughtology.GameOfLife.Tests.Foundation
             fixture = new Fixture();
         };
 
-        protected static T A<T>(params Action<T>[] with)
+        protected static T A<T>()
+        {
+            return fixture.Create<T>();
+        }
+
+        protected static T A<T>(Action<T> with)
         {
             var value = fixture.Create<T>();
-
-            foreach (var propertySetter in with)
-            {
-                propertySetter(value);
-            }
-
+            with(value);
             return value;
         }
 
-        protected static T A<T>(params Expression<Func<T, object>>[] withOnly)
+        protected static T APartial<T>(Expression<Func<T, object>> withOnly)
         {
-            var builder = fixture
+            return fixture
                 .Build<T>()
-                .OmitAutoProperties();
-
-            foreach (var property in withOnly)
-            {
-                builder = builder.With(property);
-            }
-
-            return builder.Create();
+                .OmitAutoProperties()
+                .With(withOnly)
+                .Create();
         }
 
-        protected static IEnumerable<T> Many<T>(int count = 3, params Action<T>[] with)
+        protected static T AnEmpty<T>()
+        {
+            return fixture
+                .Build<T>()
+                .OmitAutoProperties()
+                .Create();
+        }
+
+        protected static T AFrozen<T>()
+        {
+            return fixture.Freeze<T>();
+        }
+
+        protected static IEnumerable<T> Many<T>(int count = 3)
+        {
+            return fixture.CreateMany<T>(count);
+        }
+
+        protected static IEnumerable<T> Many<T>(Action<T> with, int count = 3)
         {
             var values = fixture.CreateMany<T>(count);
 
             foreach (var value in values)
             {
-                Array.ForEach(with, setter => setter(value));
+                with(value);
             }
 
             return values;
