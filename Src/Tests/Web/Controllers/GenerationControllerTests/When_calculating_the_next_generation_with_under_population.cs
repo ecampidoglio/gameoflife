@@ -20,7 +20,7 @@ namespace Thoughtology.GameOfLife.Tests.Web.Controllers.GenerationControllerTest
         };
 
         Because of = () =>
-            nextGen = Subject.Post(seed);
+            nextGen = Subject.CalculateNextGeneration(seed);
 
         It should_include_the_solitary_cell_in_the_next_generation = () =>
             nextGen.ShouldContain(solitaryCell);

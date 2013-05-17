@@ -7,7 +7,8 @@
 
     public class GenerationController : ApiController
     {
-        public IEnumerable<Cell> Post(IEnumerable<Cell> seed)
+        [HttpPost]
+        public IEnumerable<Cell> CalculateNextGeneration(IEnumerable<Cell> seed)
         {
             return KillUnderPopulatedCells(seed);
         }
