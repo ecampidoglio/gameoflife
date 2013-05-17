@@ -73,6 +73,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Foundation\Assertions.cs" />
+    <Compile Include="Foundation\HttpExtensions.cs" />
     <Compile Include="Hooks\RegisterAutoData.cs" />
     <Compile Include="Hooks\RegisterWebClient.cs" />
     <Compile Include="Hooks\WebClient.cs" />
