@@ -121,6 +121,13 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\Lib\jasmine-1.3.1\jasmine-html.js" />
+    <Content Include="Scripts\Lib\jasmine-1.3.1\jasmine.css" />
+    <Content Include="Scripts\Lib\jasmine-1.3.1\jasmine.js" />
+    <Content Include="Scripts\Lib\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\Lib\jquery.extensions.js" />
+    <Content Include="Scripts\Lib\knockout-2.2.1.js" />
+    <Content Include="Scripts\Tests\TestRunner.html" />
     <Content Include="Styles\Universe.css" />
     <Content Include="Views\Universe.html" />
     <Content Include="Web.config" />
@@ -130,6 +137,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Scripts\Lib\jasmine-1.3.1\MIT.LICENSE" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
