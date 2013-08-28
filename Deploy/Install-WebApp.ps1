@@ -30,6 +30,8 @@ Task DeployApplication -Depends CreatePublishSettings {
 }
 
 Task CreatePublishSettings {
+    Import-PSSnapin WDeploySnapin3.0
+
     New-WDPublishSettings `
         -ComputerName $ComputerName `
         -Site $WebSiteName `
@@ -57,7 +59,7 @@ Task CreateWebSite -Depends DeleteWebSite {
             Set-ItemProperty $appPoolPath -Name managedRuntimeVersion -Value v4.0
             Set-ItemProperty $appPoolPath -Name enable32BitAppOnWin64 -Value $true
 
-            $sites = ls IIS:\\Sites
+            $sites = dir IIS:\\Sites
             $maxId =  $sites.Id | sort -Descending | select -First 1
             New-Website -Id ($maxId + 1) `
                         -Name $using:WebSiteName `
