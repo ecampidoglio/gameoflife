@@ -18,7 +18,7 @@
     <RootNamespace>Thoughtology.GameOfLife.Web</RootNamespace>
     <AssemblyName>Thoughtology.GameOfLife.Web</AssemblyName>
     <MvcBuildViews>false</MvcBuildViews>
-    <UseIISExpress>false</UseIISExpress>
+    <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
